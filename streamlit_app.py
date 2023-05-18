@@ -1,4 +1,5 @@
 import sys
+sys.stdout=log.info
 print(sys.executable)
 
 import streamlit as st
