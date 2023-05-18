@@ -1,7 +1,3 @@
-import sys
-import logging
-logging.warning(sys.executable)
-
 import streamlit as st
 import openai
 import pinecone
