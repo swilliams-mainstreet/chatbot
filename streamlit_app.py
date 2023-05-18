@@ -1,5 +1,6 @@
 import sys
-sys.stdout=log.info
+import logging
+logging.warning('Watch out!')
 print(sys.executable)
 
 import streamlit as st
