@@ -1,7 +1,6 @@
 import sys
 import logging
-logging.warning('Watch out!')
-print(sys.executable)
+logging.warning(sys.executable)
 
 import streamlit as st
 import openai
