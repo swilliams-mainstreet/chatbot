@@ -23,6 +23,11 @@ if os.getenv('AZURE_OPENAI_GPT4_MODEL_NAME') is None:
 
 # Add the UI title, text input and search button
 st.title("Q&A App 🔎")
+
+role = st.selectbox(
+    'What is your role?',
+    ('Front Desk (FD)', 'Medical Assistant 1 (MA1)', 'Medical Assistant 2 (MA2)', 'Provider'))
+
 query = st.text_input("What do you want to know?")
 
 if st.button("Search"):
@@ -74,7 +79,7 @@ if st.button("Search"):
         try:
             # Build the prompt
             prompt = f"""
-            Answer the following question based on the context below.
+            Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{role}".
             If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context.
             ---
             QUESTION: {query}                                            
