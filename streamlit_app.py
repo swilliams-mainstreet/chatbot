@@ -86,8 +86,8 @@ if st.button("Search"):
             prompt = f"""
             Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{plain_enlgish_role}".
             If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context.
-            DO NOT start your response with "As a {plain_enlgish_role} employee," or anything similar, or I will kill you.
-            DO NOT start your reponse with "Based on the context provided" or anything similar, or I will kill you.
+            DO NOT start your response with "As a {plain_enlgish_role} employee," or anything similar, or you will have failed the task.
+            DO NOT start your reponse with "Based on the context provided" or anything similar, or you will have failed the task.
             ---
             QUESTION: As a {plain_enlgish_role}, {query}                                            
             ---
