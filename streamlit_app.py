@@ -57,7 +57,7 @@ if st.button("Search"):
     # Convert your query into a vector using Azure OpenAI
     try:
         query_vector = openai.Embedding.create(
-            input=query,
+            input=f"As a {plain_enlgish_role}," + query,
             engine=embeddings_model_name,
         )["data"][0]["embedding"]
     except Exception as e:
