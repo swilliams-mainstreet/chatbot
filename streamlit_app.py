@@ -28,18 +28,10 @@ role = st.selectbox(
     'What is your role?',
     ('Front Desk (FD)', 'Medical Assistant 1 (MA1)', 'Medical Assistant 2 (MA2)', 'Provider'))
 
-def matcher(role):
-    match role:
-        case 'Front Desk (FD)':
-            return 'front desk employee'
-        case 'Medical Assistant 1 (MA1)':
-            return 'medical assistant 1 (MA1)'
-        case 'Medical Assistant 2 (MA2)':
-            return 'medical assistant 2 (MA2)'
-        case 'Provider':
-            return 'provider'
-
-plain_enlgish_role = matcher(role)
+if role == 'Front Desk (FD)': plain_enlgish_role = 'front desk employee (FD)'
+elif role == 'Medical Assistant 1 (MA1)': plain_enlgish_role = 'medical assistant 1 (MA1)'
+elif role == 'Medical Assistant 2 (MA2)': plain_enlgish_role = 'medical assistant 2 (MA2)'
+elif role == 'Provider': plain_enlgish_role = 'provider'
 
 query = st.text_input("What do you want to know?")
 
