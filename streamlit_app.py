@@ -82,7 +82,7 @@ if st.button("Search"):
             Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{role}".
             If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context.
             ---
-            QUESTION: {query}                                            
+            QUESTION: Asking as an employee whose role is {role}: {query}                                            
             ---
             CONTEXT:
             {joined_chunks}
