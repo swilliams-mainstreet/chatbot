@@ -28,6 +28,19 @@ role = st.selectbox(
     'What is your role?',
     ('Front Desk (FD)', 'Medical Assistant 1 (MA1)', 'Medical Assistant 2 (MA2)', 'Provider'))
 
+def matcher(role):
+    match role:
+        case 'Front Desk (FD)':
+            return 'front desk employee'
+        case 'Medical Assistant 1 (MA1)':
+            return 'medical assistant 1 (MA1)'
+        case 'Medical Assistant 2 (MA2)':
+            return 'medical assistant 2 (MA2)'
+        case 'Provider':
+            return 'provider'
+
+plain_enlgish_role = matcher(role)
+
 query = st.text_input("What do you want to know?")
 
 if st.button("Search"):
@@ -79,10 +92,10 @@ if st.button("Search"):
         try:
             # Build the prompt
             prompt = f"""
-            Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{role}".
+            Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{plain_enlgish_role}".
             If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context. Don't start your answer with "As an employee whose role is...".
             ---
-            QUESTION: As an employee whose role is {role}: {query}                                            
+            QUESTION: As a {plain_enlgish_role}, {query}                                            
             ---
             CONTEXT:
             {joined_chunks}
