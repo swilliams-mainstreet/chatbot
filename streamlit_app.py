@@ -80,9 +80,9 @@ if st.button("Search"):
             # Build the prompt
             prompt = f"""
             Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{role}".
-            If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context.
+            If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context. Don't start your answer with "As an employee whose role is...".
             ---
-            QUESTION: Asking as an employee whose role is {role}: {query}                                            
+            QUESTION: As an employee whose role is {role}: {query}                                            
             ---
             CONTEXT:
             {joined_chunks}
