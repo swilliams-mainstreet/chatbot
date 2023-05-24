@@ -85,12 +85,9 @@ if st.button("Search"):
             # Build the prompt
             prompt = f"""
             Answer the following question based on the context below. The question is being asked from the perspective of an employee whose role is "{plain_enlgish_role}".
-            If you don't know the answer, just say that you don't know. Don't try to make up an answer. Do not answer beyond this context.
-            DO NOT include "As a Q&A assistant," or anything similar ANYWHERE in your response, or you will have COMPLETELY FAILED the task.
-            DO NOT include "As a {plain_enlgish_role} employee," or anything similar ANYWHERE in your response, or you will have COMPLETELY FAILED the task.
-            DO NOT include "Based on the context provided" or anything similar anywhere in your response, or you will have COMPLETELY FAILED the task.
+            If you don't know the answer, just say that you don't know. Don't try to make up an answer. Keep your answer within this context. Keep your answer concise.
             ---
-            QUESTION: As a {plain_enlgish_role}, {query}                                            
+            QUESTION: {query}                                            
             ---
             CONTEXT:
             {joined_chunks}
